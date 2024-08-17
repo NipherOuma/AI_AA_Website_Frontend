@@ -26,7 +26,7 @@ const isNavbarCollapsed = ref(true);
             <a class="nav-link" href="/our-impact">Our Impact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/educational-resources">Educational Resources</a>
+            <a class="nav-link" href="/blog">Blog</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/get-involved">Get Involved</a>
