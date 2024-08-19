@@ -32,7 +32,7 @@ onMounted(() => {
           <h1 class="display-4 fw-bold">AI AA NGO</h1>
           <p class="fs-4 mt-4">"Artificial Intelligence for Agricultural Advancement Non-Governmental Organization"</p>
           <p class="lead mt-3">Enhancing agricultural productivity and sustainability in Kenya through AI technologies.</p>
-          <a class="btn btn-success btn-lg mt-4" href="#" role="button">Get Started</a>
+          <a class="btn btn-outline-success btn-lg mt-4 text-white border-2" href="#" role="button">Get Started</a>
         </div>
       </section>
     </div>
@@ -56,26 +56,29 @@ onMounted(() => {
       </section>
 
       <!-- Vision, Mission, and Areas of Coverage Section -->
-      <section class="vision-mission py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 d-flex justify-content-center">
-              <img src="@/assets/maize.jpg" class="img-fluid rounded" alt="About Us">
-            </div>
-            <div class="col-md-6 mb-4">
-              <h2 class="h2">Vision, Mission, and Areas of Coverage</h2>
-              <p class="lead fs-5">~To revolutionize Kenyan agriculture through artificial intelligence, creating a sustainable, productive, and prosperous farming sector.</p>
-              <p class="lead fs-5">~We aim to empower Kenyan farmers and agricultural stakeholders with cutting-edge ai technologies and data-driven insights.</p>
-              <p class="lead fs-5">~Counties such as Kisii, Baringo, Mombasa, Lamu, and Turkana.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+<section class="vision-mission py-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 d-flex justify-content-center order-md-1 order-2">
+        <img src="@/assets/maize.jpg" class="img-fluid rounded" alt="About Us">
+      </div>
+      <div class="col-md-6 mb-4 order-md-2 order-1">
+        <h2 class="h2">Vision, Mission, and Areas of Coverage</h2>
+        <p class="lead fs-5">~To revolutionize Kenyan agriculture through artificial intelligence, creating a sustainable, productive, and prosperous farming sector.</p>
+        <p class="lead fs-5">~We aim to empower Kenyan farmers and agricultural stakeholders with cutting-edge AI technologies and data-driven insights.</p>
+        <p class="lead fs-5">~Counties such as Kisii, Baringo, Mombasa, Lamu, and Turkana.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
       <!-- Services Section -->
 <section class="services py-5 bg-light">
   <div class="container">
     <h2 class="h2 text-center">Our Objectives</h2>
+    <hr class="bg-warning w-25 mx-auto mx-md-0">
     <div class="row mt-4">
       <!-- Objective 1 -->
       <div class="col-md-4 mb-4">
@@ -143,7 +146,7 @@ onMounted(() => {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
 

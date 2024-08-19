@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import ContactView from '@/views/ContactView.vue'
 import PostList from '@/views/PostList.vue'
 import PostDetail from '@/views/PostDetail.vue'
+import Impact from '@/views/Impact.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +33,11 @@ const router = createRouter({
       path: '/contact',
       name: 'contact',
       component: ContactView
+    },
+    {
+      path: '/impact',
+      name: 'impact',
+      component: Impact
     },
   ]
 })

@@ -23,7 +23,7 @@ const isNavbarCollapsed = ref(true);
             <a class="nav-link" href="/about">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/our-impact">Our Impact</a>
+            <a class="nav-link" href="/impact">Our Impact</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/blog">Blog</a>
@@ -79,7 +79,6 @@ a img{
 }
 .subnavbar {
   background-color: rgba(0, 0, 0, 0.5);
-  height: 30px;
 }
 
 .subnavbar .nav-link {
