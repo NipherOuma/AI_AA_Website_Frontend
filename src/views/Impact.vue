@@ -1,3 +1,22 @@
+<script setup>
+import { ref, onMounted } from 'vue'; // Import ref and onMounted from Vue
+import Navbar from '@/components/Navbar.vue';
+import Footer from '@/components/Footer.vue';
+
+import hero1 from '@/assets/bg.jpg';
+import hero2 from '@/assets/bg1.png';
+import hero3 from '@/assets/bg3.jpg';
+
+const images = [hero1, hero2, hero3, hero3, hero2, hero1];
+const currentImageIndex = ref(0);
+
+onMounted(() => {
+  setInterval(() => {
+    currentImageIndex.value = (currentImageIndex.value + 1) % images.length;
+  }, 5000);
+});
+</script>
+
 <template>
     <Navbar />
     <div class="impact-container">
@@ -109,25 +128,6 @@
     <Footer />
   </template>
   
-  <script setup>
-  import { ref, onMounted } from 'vue'; // Import ref and onMounted from Vue
-  import Navbar from '@/components/Navbar.vue';
-  import Footer from '@/components/Footer.vue';
-  
-  import hero1 from '@/assets/bg.jpg';
-  import hero2 from '@/assets/bg1.png';
-  import hero3 from '@/assets/bg3.jpg';
-  
-  const images = [hero1, hero2, hero3, hero3, hero2, hero1];
-  const currentImageIndex = ref(0);
-  
-  onMounted(() => {
-    setInterval(() => {
-      currentImageIndex.value = (currentImageIndex.value + 1) % images.length;
-    }, 5000);
-  });
-  </script>
-  
   <style scoped>
   .impact-container {
     padding: 2rem 1rem;
@@ -139,7 +139,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3); 
+    background: rgba(0, 0, 0, 0.5); 
     z-index: 1;
   }
   

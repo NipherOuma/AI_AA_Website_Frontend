@@ -4,6 +4,7 @@ import ContactView from '@/views/ContactView.vue'
 import PostList from '@/views/PostList.vue'
 import PostDetail from '@/views/PostDetail.vue'
 import Impact from '@/views/Impact.vue'
+import Involved from '@/views/Involved.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -38,6 +39,11 @@ const router = createRouter({
       path: '/impact',
       name: 'impact',
       component: Impact
+    },
+    {
+      path: '/get-involved',
+      name: 'get-involved',
+      component: Involved
     },
   ]
 })
