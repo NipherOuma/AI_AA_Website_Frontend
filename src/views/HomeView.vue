@@ -19,7 +19,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <div :style="{ backgroundImage: `url(${images[currentImageIndex]})`, backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100vh', transition: 'background-image 5s ease-in-out' }">
+    <div class="body" :style="{ backgroundImage: `url(${images[currentImageIndex]})`, backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100vh', transition: 'background-image 5s ease-in-out' }">
       <!-- Navbar -->
       <header>
         <Navbar />
@@ -31,7 +31,7 @@ onMounted(() => {
         <div class="hero-content container text-center text-white">
           <h1 class="display-4 fw-bold">AI AA NGO</h1>
           <p class="fs-4 mt-4">"Artificial Intelligence for Agricultural Advancement Non-Governmental Organization"</p>
-          <p class="lead mt-3">Enhancing agricultural productivity and sustainability in Kenya through AI technologies.</p>
+          <p class=" mt-3">Enhancing agricultural productivity and sustainability in Kenya through AI technologies.</p>
           <a class="btn btn-outline-success btn-lg mt-4 text-white border-2" href="#" role="button">Get Started</a>
         </div>
       </section>
@@ -46,7 +46,7 @@ onMounted(() => {
             <div class="col-md-6 text-center text-md-start mb-4 mb-md-0">
               <h2 class="h2">About Us</h2>
               <hr class="bg-warning w-25 mx-auto mx-md-0">
-              <p class="lead mt-3">AI AA NGO is dedicated to enhancing agricultural productivity and sustainability in Kenya. We utilize artificial intelligence to optimize farming practices, forecast yields, and improve market accessibility for smallholder farmers.</p>
+              <p class=" mt-3">AI AA NGO is dedicated to enhancing agricultural productivity and sustainability in Kenya. We utilize artificial intelligence to optimize farming practices, forecast yields, and improve market accessibility for smallholder farmers.</p>
             </div>
             <div class="col-md-6 d-flex justify-content-center">
               <img src="@/assets/about1.png" class="img-fluid rounded" alt="About Us">
@@ -64,9 +64,9 @@ onMounted(() => {
       </div>
       <div class="col-md-6 mb-4 order-md-2 order-1">
         <h2 class="h2">Vision, Mission, and Areas of Coverage</h2>
-        <p class="lead fs-5">~To revolutionize Kenyan agriculture through artificial intelligence, creating a sustainable, productive, and prosperous farming sector.</p>
-        <p class="lead fs-5">~We aim to empower Kenyan farmers and agricultural stakeholders with cutting-edge AI technologies and data-driven insights.</p>
-        <p class="lead fs-5">~Counties such as Kisii, Baringo, Mombasa, Lamu, and Turkana.</p>
+        <p class=" fs-6">~To revolutionize Kenyan agriculture through artificial intelligence, creating a sustainable, productive, and prosperous farming sector.</p>
+        <p class=" fs-6">~We aim to empower Kenyan farmers and agricultural stakeholders with cutting-edge AI technologies and data-driven insights.</p>
+        <p class=" fs-6">~Counties such as Kisii, Baringo, Mombasa, Lamu, and Turkana.</p>
       </div>
     </div>
   </div>
@@ -75,7 +75,7 @@ onMounted(() => {
 
 
       <!-- Services Section -->
-<section class="services py-5 bg-light">
+<section class="services py-5 mt-5 bg-light">
   <div class="container">
     <h2 class="h2 text-center">Our Objectives</h2>
     <hr class="bg-warning w-25 mx-auto mx-md-0">
@@ -86,7 +86,7 @@ onMounted(() => {
           <img src="@/assets/bg.jpg" class="card-img-top" alt="Innovation Integration">
           <div class="card-body text-center">
             <h5 class="card-title fw-bold">Innovation Integration</h5>
-            <p class="card-text lead">Introduce AI-driven tools and techniques to 500 farms across Kenya by 2025 to increase crop yields and resource efficiency.</p>
+            <p class="card-text ">Introduce AI-driven tools and techniques to 500 farms across Kenya by 2025 to increase crop yields and resource efficiency.</p>
           </div>
         </div>
       </div>
@@ -97,7 +97,7 @@ onMounted(() => {
           <img src="@/assets/training.png" class="card-img-top" alt="Education and Training">
           <div class="card-body text-center">
             <h5 class="card-title fw-bold">Education and Training</h5>
-            <p class="card-text lead">Develop and provide training programs for at least 10,000 farmers by 2025 on utilizing AI for sustainable farming practices.</p>
+            <p class="card-text ">Develop and provide training programs for at least 10,000 farmers by 2025 on utilizing AI for sustainable farming practices.</p>
           </div>
         </div>
       </div>
@@ -108,7 +108,7 @@ onMounted(() => {
           <img src="@/assets/bg1.png" class="card-img-top" alt="Research and Development">
           <div class="card-body text-center">
             <h5 class="card-title fw-bold">Research and Development</h5>
-            <p class="card-text lead">Collaborate with agricultural and tech experts to innovate new AI applications tailored to the unique challenges of Kenyan agriculture.</p>
+            <p class="card-text">Collaborate with agricultural and tech experts to innovate new AI applications tailored to the unique challenges of Kenyan agriculture.</p>
           </div>
         </div>
       </div>
@@ -129,6 +129,9 @@ onMounted(() => {
 </template>
 
 <style scoped>
+.body{
+  font-family: Arial, sans-serif;
+}
 .hero {
   position: relative;
   background-size: cover;

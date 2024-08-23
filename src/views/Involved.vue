@@ -25,6 +25,7 @@ import Footer from '@/components/Footer.vue';
             <h2>Workshops and Seminars</h2>
             <hr class="bg-warning w-25">
             <p>
+              As a person with the urge to know new things, it is important to continuously seek knowledge in education much more in your field of expertise.
               Enhance your skills and knowledge by attending our workshops and seminars. Learn from industry experts and stay ahead in your field.
             </p>
           </div>
@@ -43,7 +44,9 @@ import Footer from '@/components/Footer.vue';
             <h2>Community Engagement Programs</h2>
             <hr class="bg-warning w-25">
             <p>
-              Participate in mentoring programs and community workshops to make a positive impact and share your knowledge with others.
+              Mentoring programs that provide youth with a positive role model and support from someone outside their home.<br>
+              Educational Workshops which help to inform the community about services or resources available and can often serve as 
+              a starting point for further conversations related to youth engagement.
             </p>
           </div>
           <div class="col-md-6 order-md-1">
@@ -79,7 +82,10 @@ import Footer from '@/components/Footer.vue';
             <h2>Collaboration Opportunities</h2>
             <hr class="bg-warning w-25">
             <p>
-              Collaborate with us on agriculture and AI projects, and take advantage of grants, sponsorships, and networking opportunities.
+              Network with our like-minded professionals in the field of agriculture and AI to bring new ideas to fruition.
+Attend our seminars, webinars and workshops geared towards furthering agriculture and AI knowledge.
+We are open to collaborations with other institutions, research centers, or companies to develop and innovate in agriculture-related projects.
+We are open to grants and sponsorship opportunities from governments, nonprofits, and private organizations that relate to agriculture and AI.
             </p>
           </div>
           <div class="col-md-6 order-md-1">
