@@ -1,6 +1,6 @@
 <script setup>
-import Navbar from '@/components/Navbar.vue';
-import Footer from '@/components/Footer.vue';
+import Navbar from "@/components/Navbar.vue";
+import Footer from "@/components/Footer.vue";
 </script>
 
 <template>
@@ -8,12 +8,76 @@ import Footer from '@/components/Footer.vue';
     <Navbar />
 
     <!-- Header Section -->
-    <section class="jumbotron text-center text-white py-5">
-      <div class="container mx-auto">
+    <section
+      class="hero-section text-center text-white d-flex align-items-center justify-content-center"
+    >
+      <div class="overlay"></div>
+      <div class="container position-relative">
         <h2 class="display-8">GET INVOLVED</h2>
         <p class="lead">
-          Join our community of professionals in agriculture and AI. Attend our events, collaborate on innovative projects, and stay updated with the latest advancements.
+          Join us in shaping a sustainable and prosperous future for Kenya.
+          Whether you're an individual, organization, or business, there’s a
+          place for you in our mission.
         </p>
+      </div>
+    </section>
+
+    <!-- Involvement Options -->
+    <section class="involvement-options py-5 text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="option-card p-4 mb-4">
+              <img
+                src="@/assets/Alogo.png"
+                class="img-fluid mb-3"
+                alt="Partner with Us"
+              />
+              <h3>Partner with Us</h3>
+              <p>
+                Collaborate on projects that align with your goals and our
+                mission.
+              </p>
+              <a class="btn btn-outline-info mt-3" href="/contact" role="button"
+                >Learn More</a
+              >
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="option-card p-4 mb-4">
+              <img
+                src="@/assets/Alogo.png"
+                class="img-fluid mb-3"
+                alt="Volunteer"
+              />
+              <h3>Volunteer</h3>
+              <p>
+                Contribute your time and skills to help us achieve our
+                objectives.
+              </p>
+              <a class="btn btn-outline-info mt-3" href="/contact" role="button"
+                >Sign Up</a
+              >
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="option-card p-4 mb-4">
+              <img
+                src="@/assets/Alogo.png"
+                class="img-fluid mb-3"
+                alt="Donate"
+              />
+              <h3>Donate</h3>
+              <p>
+                Support our initiatives through financial contributions or
+                in-kind donations.
+              </p>
+              <a class="btn btn-outline-info mt-3" href="/contact" role="button"
+                >Contribute</a
+              >
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -23,14 +87,19 @@ import Footer from '@/components/Footer.vue';
         <div class="row align-items-center">
           <div class="col-md-6 mb-4">
             <h2>Workshops and Seminars</h2>
-            <hr class="bg-warning w-25">
+            <hr class="bg-warning w-25" />
             <p>
-              As a person with the urge to know new things, it is important to continuously seek knowledge in education much more in your field of expertise.
-              Enhance your skills and knowledge by attending our workshops and seminars. Learn from industry experts and stay ahead in your field.
+              Enhance your skills and knowledge by attending our workshops and
+              seminars. Learn from industry experts and stay ahead in your
+              field.
             </p>
           </div>
           <div class="col-md-6">
-            <img src="@/assets/seminar.png" class="img-fluid rounded" alt="Workshops and Seminars">
+            <img
+              src="@/assets/seminar.png"
+              class="img-fluid rounded"
+              alt="Workshops and Seminars"
+            />
           </div>
         </div>
       </div>
@@ -41,16 +110,26 @@ import Footer from '@/components/Footer.vue';
       <div class="container mx-auto">
         <div class="row">
           <div class="col-md-6 mb-4 order-md-2">
-            <h2>Community Engagement Programs</h2>
-            <hr class="bg-warning w-25">
+            <h2>Education and Digital Literacy</h2>
+            <hr class="bg-warning w-25" />
             <p>
-              Mentoring programs that provide youth with a positive role model and support from someone outside their home.<br>
-              Educational Workshops which help to inform the community about services or resources available and can often serve as 
-              a starting point for further conversations related to youth engagement.
+              Our education initiatives focus on integrating AI tools in the
+              curriculum and enhancing digital literacy among students,
+              teachers, and the wider community.
+              <br />
+              <b> • E-Learning Platforms:</b> Developing interactive e-learning
+              modules powered by AI to support remote education. <br />
+              <b> • Digital Literacy Campaigns:</b> Conducting workshops and
+              training sessions to empower communities with essential digital
+              skills.
             </p>
           </div>
           <div class="col-md-6 order-md-1">
-            <img src="@/assets/community.png" class="img-fluid rounded" alt="Community Engagement Programs">
+            <img
+              src="@/assets/community.png"
+              class="img-fluid rounded"
+              alt="Community Engagement Programs"
+            />
           </div>
         </div>
       </div>
@@ -61,14 +140,26 @@ import Footer from '@/components/Footer.vue';
       <div class="container mx-auto">
         <div class="row align-items-center">
           <div class="col-md-6 mb-4">
-            <h2>Remote Sensing in Precision Farming</h2>
-            <hr class="bg-warning w-25">
+            <h2>AI in Agriculture</h2>
+            <hr class="bg-warning w-25" />
             <p>
-              Discover how remote sensing technology is transforming precision farming by providing valuable insights for sustainable agriculture.
+              We are revolutionizing agriculture in Kenya by introducing
+              AI-driven solutions that improve productivity, reduce waste, and
+              ensure food security. Our projects include:
+              <br />
+              <b>• Precision Farming:</b> Using AI to analyze soil health,
+              weather patterns, and crop performance to optimize farming
+              practices. <br />
+              <b>• Supply Chain Optimization:</b> Leveraging AI to reduce
+              post-harvest losses and improve market access for farmers.
             </p>
           </div>
           <div class="col-md-6">
-            <img src="@/assets/remote.png" class="img-fluid rounded" alt="Remote Sensing in Precision Farming">
+            <img
+              src="@/assets/remote.png"
+              class="img-fluid rounded"
+              alt="Remote Sensing in Precision Farming"
+            />
           </div>
         </div>
       </div>
@@ -79,17 +170,25 @@ import Footer from '@/components/Footer.vue';
       <div class="container mx-auto">
         <div class="row">
           <div class="col-md-6 mb-4 order-md-2">
-            <h2>Collaboration Opportunities</h2>
-            <hr class="bg-warning w-25">
+            <h2>
+              Enhancing Inclusivity of Youth Participation in Peace and Security
+            </h2>
+            <hr class="bg-warning w-25" />
             <p>
-              Network with our like-minded professionals in the field of agriculture and AI to bring new ideas to fruition.
-Attend our seminars, webinars and workshops geared towards furthering agriculture and AI knowledge.
-We are open to collaborations with other institutions, research centers, or companies to develop and innovate in agriculture-related projects.
-We are open to grants and sponsorship opportunities from governments, nonprofits, and private organizations that relate to agriculture and AI.
+              Our latest initiative focuses on empowering youth through digital
+              platforms and civic education programs. By enhancing digital
+              literacy and providing tools for peaceful advocacy, we aim to
+              promote social cohesion and long-term stability in Kenyan
+              communities through • Digital Platforms for Peacebuilding • Civic
+              Education Programs • Technology-Driven Security.
             </p>
           </div>
           <div class="col-md-6 order-md-1">
-            <img src="@/assets/collaborations.jpg" class="img-fluid rounded" alt="Collaboration Opportunities">
+            <img
+              src="@/assets/collaborations.jpg"
+              class="img-fluid rounded"
+              alt="Collaboration Opportunities"
+            />
           </div>
         </div>
       </div>
@@ -98,11 +197,14 @@ We are open to grants and sponsorship opportunities from governments, nonprofits
     <!-- Call to Action Section -->
     <section class="call-to-action-section py-5 bg-info text-white">
       <div class="container mx-auto text-center">
-        <h2>Ready to Make a Difference?</h2>
+        <h2>We’d Love to Hear from You</h2>
         <p class="lead">
-          Get involved today and be part of the change. Join us in advancing agriculture through AI and innovation.
+          Whether you have a question, want to collaborate, or are interested in
+          learning more about our work, feel free to get in touch.
         </p>
-        <button class="btn btn-warning btn-lg">Join Now</button>
+        <a class="btn btn-warning btn-lg" href="/contact" role="button"
+          >Join Now</a
+        >
       </div>
     </section>
 
@@ -115,8 +217,50 @@ We are open to grants and sponsorship opportunities from governments, nonprofits
   font-family: Arial, sans-serif;
 }
 
-.jumbotron {
-  background-color: #17a2b8;
+.hero-section {
+  background: url("@/assets/get.jpg") no-repeat center center;
+  background-size: cover;
+  height: 60vh;
+  position: relative;
+}
+
+.hero-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.involvement-options {
+  background-color: #f8f9fa;
+}
+
+.option-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.option-card:hover {
+  transform: translateY(-5px);
+}
+
+.option-card img {
+  width: 60px;
+}
+
+.option-card h3 {
+  font-size: 1.5rem;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.option-card p {
+  font-size: 1rem;
+  color: #666;
 }
 
 .workshops-seminars-section,
@@ -129,11 +273,6 @@ We are open to grants and sponsorship opportunities from governments, nonprofits
 img {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.container p {
-  font-size: 1rem;
-  line-height: 1.5;
 }
 
 hr {

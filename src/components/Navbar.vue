@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref } from "vue";
 
 const isNavbarCollapsed = ref(true);
 </script>
@@ -9,12 +9,22 @@ const isNavbarCollapsed = ref(true);
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href="/">
-        <img src="@/assets/Alogo.png" class="img-fluid rounded" alt="AI AA NGO">
+        <img
+          src="@/assets/Alogo.png"
+          class="img-fluid rounded"
+          alt="AI AA NGO"
+        />
       </a>
-      <button class="navbar-toggler" type="button" @click="isNavbarCollapsed = !isNavbarCollapsed">
+      <button
+        class="navbar-toggler"
+        type="button"
+        @click="isNavbarCollapsed = !isNavbarCollapsed"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div :class="['collapse', 'navbar-collapse', { show: !isNavbarCollapsed }]">
+      <div
+        :class="['collapse', 'navbar-collapse', { show: !isNavbarCollapsed }]"
+      >
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <a class="nav-link" href="/">Home</a>
@@ -42,7 +52,15 @@ const isNavbarCollapsed = ref(true);
   <!-- Sub Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light subnavbar">
     <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#subnavbarCollapse" aria-controls="subnavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#subnavbarCollapse"
+        aria-controls="subnavbarCollapse"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="subnavbarCollapse">
@@ -58,7 +76,11 @@ const isNavbarCollapsed = ref(true);
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://www.instagram.com" target="_blank">
+            <a
+              class="nav-link"
+              href="https://www.instagram.com"
+              target="_blank"
+            >
               <i class="bi bi-instagram"></i>
             </a>
           </li>
@@ -74,18 +96,18 @@ const isNavbarCollapsed = ref(true);
 </template>
 
 <style scoped>
-a img{
-    height: 40px;
+a img {
+  height: 40px;
 }
 .subnavbar {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 .subnavbar .nav-link {
-  color: #ddd; 
+  color: #ddd;
 }
 
 .subnavbar .nav-link:hover {
-    color: #fff; 
+  color: #fff;
 }
 </style>

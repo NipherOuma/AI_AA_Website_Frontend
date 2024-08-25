@@ -1,18 +1,18 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import Navbar from '@/components/Navbar.vue';
-import Footer from '@/components/Footer.vue';
-import axios from 'axios';
+import { ref, onMounted } from "vue";
+import Navbar from "@/components/Navbar.vue";
+import Footer from "@/components/Footer.vue";
+import axios from "axios";
 
-const aboutUsImage = '@/assets/about1.png';
+const aboutUsImage = "@/assets/about1.png";
 const teamMembers = ref([]);
 
 onMounted(async () => {
   try {
-    const response = await axios.get('http://localhost:8000/members/');
+    const response = await axios.get("http://localhost:8000/members/");
     teamMembers.value = response.data;
   } catch (error) {
-    console.error('Error fetching team members:', error);
+    console.error("Error fetching team members:", error);
   }
 });
 </script>
@@ -21,20 +21,31 @@ onMounted(async () => {
   <header>
     <Navbar />
   </header>
-  
+
   <div class="about-us">
     <!-- About Us Section -->
     <section class="about-section">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6">
-            <img src="@/assets/collaborations.jpg" alt="About Us Image" class="img-fluid about-img">
+            <img
+              src="@/assets/collaborations.jpg"
+              alt="About Us Image"
+              class="img-fluid about-img"
+            />
           </div>
           <div class="col-md-6">
-            <h2>About Us</h2>
-            <hr class="bg-warning w-25 mx-auto mx-md-0">
-            <p>AI AA NGO is dedicated to enhancing agricultural productivity and sustainability in Kenya. We utilize artificial intelligence to optimize farming practices, forecast yields, and improve market accessibility for smallholder farmers.<br>
-              We are a dedicated team committed to improving agricultural productivity through innovative solutions. Our mission is to enhance sustainability and efficiency in farming practices.
+            <h2 class="text-center text-md-start mt-3">About Us</h2>
+            <hr class="bg-warning w-25 mx-auto mx-md-0" />
+            <p>
+              The Artificial Intelligence Alliance in Agriculture (AIAA) is a
+              registered NGO in Kenya, operating in the counties of Kisii,
+              Turkana, Baringo, Lamu, and Mombasa. Founded on the belief that
+              technology can drive positive change, we focus on integrating AI
+              and ICT in key sectors such as agriculture, education, health,
+              governance, and environmental conservation. Our work is rooted in
+              our vision of transforming Kenya into a leading model of
+              sustainable development in Africa.
             </p>
           </div>
         </div>
@@ -45,11 +56,20 @@ onMounted(async () => {
     <section class="our-team py-5">
       <div class="container">
         <h2 class="text-center mb-4">Our Team</h2>
+        <hr class="bg-warning mx-auto" style="width: 10%" />
         <div class="row">
-          <div v-for="member in teamMembers" :key="member.name" class="col-md-4 mb-4">
+          <div
+            v-for="member in teamMembers"
+            :key="member.name"
+            class="col-md-4 col-sm-6 col-12 mb-4"
+          >
             <div class="card team-card">
               <div class="team-img-container">
-                <img :src="member.image" alt="Team Member Image" class="team-img">
+                <img
+                  :src="member.image"
+                  alt="Team Member Image"
+                  class="team-img"
+                />
               </div>
               <div class="card-body">
                 <h5 class="card-title fw-bold">{{ member.name }}</h5>
@@ -65,37 +85,62 @@ onMounted(async () => {
     <!-- Services Section -->
     <section class="services py-5">
       <div class="container">
-        <h2 class="text-center mb-4">Our Services</h2>
+        <h2 class="text-center mb-4">Explore Our Initiatives</h2>
+        <hr class="bg-warning w-25 mx-auto" />
         <div class="row">
           <!-- Service 1 -->
-          <div class="col-md-4 mb-4">
+          <div class="col-md-4 col-sm-6 col-12 mb-4">
             <div class="card service-card">
-              <img src="@/assets/bg1.png" alt="Custom Software Development" class="card-img-top">
+              <img
+                src="@/assets/custom.png"
+                alt="Custom Software Development"
+                class="card-img-top"
+              />
               <div class="card-body">
                 <h5 class="card-title fw-bold">Custom Software Development</h5>
-                <p class="card-text">We build tailored software solutions to meet the unique needs of farmers and agricultural businesses, enhancing operational efficiency through AI technologies.</p>
+                <p class="card-text">
+                  We build tailored software solutions to meet the unique needs
+                  of farmers and agricultural businesses, enhancing operational
+                  efficiency through AI technologies.
+                </p>
               </div>
             </div>
           </div>
 
           <!-- Service 2 -->
-          <div class="col-md-4 mb-4">
+          <div class="col-md-4 col-sm-6 col-12 mb-4">
             <div class="card service-card">
-              <img src="@/assets/bg1.png" alt="Education and Training" class="card-img-top">
+              <img
+                src="@/assets/ed1.png"
+                alt="Education and Training"
+                class="card-img-top"
+              />
               <div class="card-body">
-                <h5 class="card-title fw-bold">Education and Training</h5>
-                <p class="card-text">We provide training programs to educate farmers on the use of AI in agriculture, equipping them with the skills to optimize their farming practices.</p>
+                <h5 class="card-title fw-bold">Education and Literacy</h5>
+                <p class="card-text">
+                  Our education initiatives focus on integrating AI tools in the
+                  curriculum and enhancing digital literacy among students,
+                  teachers, and the wider community.
+                </p>
               </div>
             </div>
           </div>
 
           <!-- Service 3 -->
-          <div class="col-md-4 mb-4">
+          <div class="col-md-4 col-sm-6 col-12 mb-4">
             <div class="card service-card">
-              <img src="@/assets/bg1.png" alt="AI-based Crop Monitoring" class="card-img-top">
+              <img
+                src="@/assets/conservation.png"
+                alt="AI-based Crop Monitoring"
+                class="card-img-top"
+              />
               <div class="card-body">
-                <h5 class="card-title fw-bold">AI-based Crop Monitoring</h5>
-                <p class="card-text">Our AI-based crop monitoring solutions provide real-time insights into crop health, helping farmers make informed decisions to improve yields.</p>
+                <h5 class="card-title fw-bold">Environmental Conservation</h5>
+                <p class="card-text">
+                  Our commitment to environmental sustainability is reflected in
+                  our initiatives to promote AI-powered solutions that protect
+                  Kenya’s natural resources and ecosystems.
+                </p>
               </div>
             </div>
           </div>
@@ -120,13 +165,13 @@ onMounted(async () => {
   width: 100%;
   height: auto;
   max-height: 400px;
-  border-radius: 8px; 
+  border-radius: 8px;
 }
 
 .our-team {
   background-color: #f8f9fa;
   padding: 3rem 0;
-  height: 100vh;
+  height: auto;
 }
 
 .team-card {
@@ -134,16 +179,16 @@ onMounted(async () => {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  height: 80%;
+  height: 90%;
   position: relative;
   margin-top: 80px;
-  z-index: 0; 
+  z-index: 0;
 }
 
 .team-img-container {
   position: absolute;
-  top: -80px; 
-  left: 30%;
+  top: -80px;
+  left: 50%;
   transform: translateX(-50%);
   z-index: 10;
 }
@@ -153,11 +198,11 @@ onMounted(async () => {
   height: 150px;
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid rgb(229, 226, 226); 
+  border: 5px solid rgb(229, 226, 226);
 }
 
 .card-body {
-  padding-top: 80px; 
+  padding-top: 80px;
 }
 
 .card-title {
@@ -195,7 +240,7 @@ onMounted(async () => {
 .services .card-title {
   font-size: 1.25rem;
   font-weight: bold;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.25rem;
 }
 
 .services .card-text {
@@ -211,6 +256,24 @@ onMounted(async () => {
   .our-team .row {
     display: flex;
     flex-direction: column;
+  }
+
+  .team-img-container {
+    left: 50%;
+  }
+
+  .team-card {
+    margin-top: 120px;
+  }
+}
+
+@media (max-width: 576px) {
+  .team-card {
+    margin-top: 140px;
+  }
+
+  .card-body {
+    padding-top: 100px;
   }
 }
 </style>
