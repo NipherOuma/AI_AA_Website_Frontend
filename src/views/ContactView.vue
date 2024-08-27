@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import axios from "axios";
 import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/Footer.vue";
@@ -9,12 +9,37 @@ const email = ref("");
 const message = ref("");
 const formMessage = ref("");
 const alertType = ref("");
+const recentHighlights = ref([]);
+const upcomingEvents = ref([]);
+
+const fetchEvents = async () => {
+  try {
+    const response = await axios.get("http://127.0.0.1:8000/api/events/");
+    const events = response.data;
+    const currentDate = new Date();
+
+    events.forEach((event) => {
+      const eventDate = new Date(event.date);
+      if (eventDate < currentDate) {
+        recentHighlights.value.push(event);
+      } else {
+        upcomingEvents.value.push(event);
+      }
+    });
+  } catch (error) {
+    console.error("Failed to fetch events", error);
+  }
+};
+
+onMounted(() => {
+  fetchEvents();
+});
 
 const submitForm = async (event) => {
   event.preventDefault();
 
   try {
-    const response = await axios.post("http://127.0.0.1:8000/api/contact/", {
+    await axios.post("http://127.0.0.1:8000/api/contact/", {
       name: name.value,
       email: email.value,
       message: message.value,
@@ -89,17 +114,14 @@ const submitForm = async (event) => {
               Send Message
             </button>
           </form>
-          <!-- Upcoming Events -->
+
+          <!-- Recent Highlights -->
           <h2 class="h2 mt-2">Recent Highlights</h2>
           <hr class="bg-warning w-25 mx-0 mx-md-0" />
           <ul class="list-unstyled">
-            <li>
-              <strong>July 2024:</strong> Launch of the "Enhancing Inclusivity
-              of Youth Participation in Peace and Security" project.
-            </li>
-            <li>
-              <strong>June 2024:</strong> AIAA recognized for excellence in
-              promoting digital literacy in Kenya’s rural communities.
+            <li v-for="event in recentHighlights" :key="event.id">
+              <strong>{{ new Date(event.date).toLocaleDateString() }}:</strong>
+              {{ event.title }} - {{ event.description }}
             </li>
           </ul>
         </div>
@@ -125,13 +147,9 @@ const submitForm = async (event) => {
           <h2 class="h2 mb-4">Upcoming Events</h2>
           <hr class="bg-warning w-25 mx-0 mx-md-0" />
           <ul class="list-unstyled">
-            <li>
-              <strong>• August 2024:</strong> Youth Civic Engagement Workshop in
-              Kisii County.
-            </li>
-            <li>
-              <strong>• September 2024:</strong> Digital Literacy Training Camp
-              in Turkana County.
+            <li v-for="event in upcomingEvents" :key="event.id">
+              <strong>{{ new Date(event.date).toLocaleDateString() }}:</strong>
+              {{ event.title }} - {{ event.description }}
             </li>
           </ul>
         </div>

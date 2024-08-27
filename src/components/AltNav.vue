@@ -82,18 +82,17 @@ const isNavbarCollapsed = ref(true);
 a img {
   height: 40px;
 }
-
 .subnavbar {
-  width: 40px;
-  height: 50vh;
+  width: 40px; 
+  height: 100vh; 
   position: fixed;
   top: 0;
-  left: 5px;
-  z-index: 500;
+  left: 0;
+  z-index: 500; 
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 60px;
+  padding-top: 60px; 
 }
 
 .subnavbar-items {
@@ -103,31 +102,16 @@ a img {
 }
 
 .subnavbar .nav-link {
+  color: #ddd;
   padding: 15px 0;
   text-align: center;
 }
 
-.subnavbar .nav-link i.bi-facebook {
-  color: #3b5998;
-}
-
-.subnavbar .nav-link i.bi-twitter {
-  color: #1ba5fa;
-}
-
-.subnavbar .nav-link i.bi-instagram {
-  color: #e1306c;
-}
-
-.subnavbar .nav-link i.bi-linkedin {
-  color: #0077b5;
-}
-
-.subnavbar .nav-link i:hover {
-  filter: brightness(1.2);
+.subnavbar .nav-link:hover {
+  color: #fff;
 }
 
 .navbar {
-  padding-left: 30px;
+  padding-left: 60px;
 }
 </style>

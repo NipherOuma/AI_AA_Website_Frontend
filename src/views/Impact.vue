@@ -7,20 +7,11 @@ const staticImage = "@/assets/impact1.jpg";
 
 <template>
   <div class="impact-container">
-    <div
-      style="
-        background: url(&quot;../src/assets/impact2.jpg&quot;) no-repeat center
-          center;
-        background-size: cover;
-        height: 80vh;
-        background-color: rgba(0, 0, 0, 0.3);
-      "
-    >
-      <Navbar />
-      <section
-        class="jumbotron text-center mt-3 py-5"
-        style="padding-top: 7rem"
-      >
+    <Navbar />
+
+    <div class="hero-section">
+      <div class="hero-overlay"></div>
+      <section class="hero-content text-center">
         <div class="container text-white mx-auto">
           <h2 class="display-8">OUR IMPACT</h2>
           <p class="lead">
@@ -36,7 +27,7 @@ const staticImage = "@/assets/impact1.jpg";
 
     <!-- Impact Cards Section -->
     <section class="impact-cards py-3">
-      <h2 class="text-center mb-4">Our Impact</h2>
+      <h2 class="text-center mb-4">Our Goals</h2>
       <hr class="bg-warning mx-auto" style="width: 12%" />
       <div class="container mx-auto">
         <div class="row">
@@ -257,9 +248,15 @@ const staticImage = "@/assets/impact1.jpg";
   font-family: Arial, sans-serif;
 }
 
-.jumbotron {
-  background-color: transparent;
+.hero-content{
+  padding-top: 3rem; 
+}
+.hero-section {
   position: relative;
+  padding-top: 3rem; 
+  background: url("@/assets/impact2.jpg") no-repeat center center;
+  background-size: cover;
+  height: 65vh;
 }
 
 .hero-overlay {

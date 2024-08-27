@@ -206,7 +206,7 @@ onMounted(() => {
   position: relative;
   background-size: cover;
   background-position: center;
-  height: 85vh;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;

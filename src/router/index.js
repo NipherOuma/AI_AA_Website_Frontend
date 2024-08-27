@@ -6,6 +6,7 @@ import PostDetail from "@/views/PostDetail.vue";
 import Impact from "@/views/Impact.vue";
 import Involved from "@/views/Involved.vue";
 import AboutView from "@/views/AboutView.vue";
+import Gallery from "@/views/Gallery.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -50,6 +51,11 @@ const router = createRouter({
       path: "/about",
       name: "about",
       component: AboutView,
+    },
+    {
+      path: "/gallery",
+      name: "gallery",
+      component: Gallery,
     },
   ],
 });
