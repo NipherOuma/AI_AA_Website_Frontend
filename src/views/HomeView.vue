@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted } from "vue";
+import axios from "axios";
 import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/Footer.vue";
 
@@ -9,11 +10,30 @@ import hero3 from "@/assets/bg3.jpg";
 
 const images = [hero1, hero2, hero3, hero3, hero2, hero1];
 const currentImageIndex = ref(0);
+const upcomingEvents = ref([]);
+
+const fetchEvents = async () => {
+  try {
+    const response = await axios.get("http://127.0.0.1:8000/api/events/");
+    const events = response.data;
+    const currentDate = new Date();
+
+    // Filter only upcoming events
+    upcomingEvents.value = events.filter((event) => {
+      const eventDate = new Date(event.date);
+      return eventDate >= currentDate;
+    });
+  } catch (error) {
+    console.error("Failed to fetch events", error);
+  }
+};
 
 onMounted(() => {
   setInterval(() => {
     currentImageIndex.value = (currentImageIndex.value + 1) % images.length;
   }, 5000);
+  
+  fetchEvents();
 });
 </script>
 
@@ -38,8 +58,7 @@ onMounted(() => {
       <section class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content container text-center text-white">
-          <h1 class="display-4 fw-bold">AI AA NGO</h1>
-          <p class="fs-4 mt-2">
+          <p class="mt-2">
             "Welcome to Artificial Intelligence Alliance in Agriculture (AIAA)"
           </p>
           <p class="mt-3">
@@ -189,6 +208,20 @@ onMounted(() => {
         </div>
       </section>
 
+      <!-- Upcoming Events Section -->
+      <section class="upcoming-events py-5">
+        <div class="container">
+          <h2 class="h2 text-center">Upcoming Events</h2>
+          <hr class="bg-warning mx-auto" style="width: 15%" />
+          <ul class="list-unstyled mt-4">
+            <li v-for="event in upcomingEvents" :key="event.id" class="mb-3">
+              <strong>{{ new Date(event.date).toLocaleDateString() }}:</strong>
+              {{ event.title }} - {{ event.description }}
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <!-- Footer -->
       <footer>
         <Footer />
@@ -226,14 +259,18 @@ onMounted(() => {
 .hero-content {
   position: relative;
   z-index: 2;
+  text-align: center;
 }
 
-.hero-content h1 {
-  font-size: 4rem;
+.hero-content p{
+  font-size: 40px; 
+  font-weight: bold; 
+  margin-top: 20px;  
 }
 
-.hero-content p {
-  font-size: 1.25rem;
+.hero-content p.mt-3 {
+  font-size: 1.5rem; 
+  font-weight: normal; 
 }
 
 .introduction img {
@@ -250,6 +287,11 @@ onMounted(() => {
   object-fit: cover;
 }
 
+.upcoming-events ul {
+  list-style: none;
+  padding: 0;
+}
+
 @media (max-width: 768px) {
   .vision-mission .row {
     display: flex;
@@ -259,6 +301,14 @@ onMounted(() => {
   .vision-mission .col-md-6 {
     order: 1;
     margin-bottom: 1rem;
+  }
+
+  .hero-content p.fs-4 {
+    font-size: 2rem; /* Adjust the font size for smaller screens */
+  }
+
+  .hero-content p.mt-3 {
+    font-size: 1.2rem; /* Adjust the font size for the subtitle on smaller screens */
   }
 }
 </style>
