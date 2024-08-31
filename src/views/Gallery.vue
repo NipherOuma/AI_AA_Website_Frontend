@@ -30,23 +30,31 @@ function openModal(image) {
 function closeModal() {
   bsModal.hide();
 }
+
+function getRandomSpan() {
+  return Math.floor(Math.random() * 2) + 1;
+}
 </script>
 
 <template>
   <header>
     <Navbar />
   </header>
-  <div class="container mt-3">
-    <div class="row">
-        <h2 class="text-center text-dark mb-2">Our Visual Showcase</h2>
-      <div class="col-md-4 mt-4" v-for="image in images" :key="image.id">
-        <div class="card mb-4 shadow-sm image-card" @click="openModal(image)">
-          <img :src="image.image" class="card-img-top" :alt="image.title">
-          <div class="overlay">
-            <div class="overlay-content">
-              <h5 class="card-title">{{ image.title }}</h5>
-              <p class="card-text">{{ image.description }}</p>
-            </div>
+  <div class="container mt-5 mb-5">
+    <h2 class="text-center text-dark mb-4">Our Visual Showcase</h2>
+    <div class="mosaic-gallery">
+      <div 
+        class="mosaic-item" 
+        v-for="image in images" 
+        :key="image.id" 
+        @click="openModal(image)"
+        :style="{ gridColumnEnd: `span ${getRandomSpan()}`, gridRowEnd: `span ${getRandomSpan()}` }"
+      >
+        <img :src="image.image" :alt="image.title">
+        <div class="overlay">
+          <div class="overlay-content">
+            <h5>{{ image.title }}</h5>
+            <p>{{ image.description }}</p>
           </div>
         </div>
       </div>
@@ -75,20 +83,29 @@ function closeModal() {
 </template>
 
 <style scoped>
+.mosaic-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+  grid-auto-rows: 150px; 
+  gap: 10px; 
+  grid-auto-flow: dense; 
+}
 
-.card-img-top {
-  height: 300px; 
+.mosaic-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.mosaic-item img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
 }
 
-.image-card {
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.image-card:hover .card-img-top {
+.mosaic-item:hover img {
   transform: scale(1.1);
 }
 
@@ -103,7 +120,7 @@ function closeModal() {
   transition: opacity 0.3s ease-in-out;
 }
 
-.image-card:hover .overlay {
+.mosaic-item:hover .overlay {
   opacity: 1;
 }
 
@@ -112,7 +129,7 @@ function closeModal() {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 20px;
+  padding: 10px;
   color: white;
   text-align: center;
 }
@@ -138,7 +155,7 @@ function closeModal() {
 
 .modal-body img {
   width: 100%;
-  max-height: 400px; 
+  max-height: 400px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -161,6 +178,11 @@ function closeModal() {
   line-height: 1;
   opacity: 0.5;
   cursor: pointer;
+}
+
+.container {
+  margin-top: 50px; 
+  margin-bottom: 50px; 
 }
 
 @media (max-width: 576px) {

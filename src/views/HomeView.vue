@@ -59,7 +59,7 @@ onMounted(() => {
         <div class="hero-overlay"></div>
         <div class="hero-content container text-center text-white">
           <p class="mt-2">
-            "Welcome to Artificial Intelligence Alliance in Agriculture (AIAA)"
+            Welcome to Artificial Intelligence Alliance in Agriculture (AIAA)
           </p>
           <p class="mt-3">
             Enhancing agricultural productivity and sustainability in Kenya

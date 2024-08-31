@@ -115,15 +115,6 @@ const submitForm = async (event) => {
             </button>
           </form>
 
-          <!-- Recent Highlights -->
-          <h2 class="h2 mt-2">Recent Highlights</h2>
-          <hr class="bg-warning w-25 mx-0 mx-md-0" />
-          <ul class="list-unstyled">
-            <li v-for="event in recentHighlights" :key="event.id">
-              <strong>{{ new Date(event.date).toLocaleDateString() }}:</strong>
-              {{ event.title }} - {{ event.description }}
-            </li>
-          </ul>
         </div>
 
         <!-- Map and Events Section -->
@@ -143,11 +134,11 @@ const submitForm = async (event) => {
             </iframe>
           </div>
 
-          <!-- Upcoming Events -->
-          <h2 class="h2 mb-4">Upcoming Events</h2>
+          <!-- Recent Highlights -->
+          <h2 class="h2 mt-2">Recent Highlights</h2>
           <hr class="bg-warning w-25 mx-0 mx-md-0" />
           <ul class="list-unstyled">
-            <li v-for="event in upcomingEvents" :key="event.id">
+            <li v-for="event in recentHighlights" :key="event.id">
               <strong>{{ new Date(event.date).toLocaleDateString() }}:</strong>
               {{ event.title }} - {{ event.description }}
             </li>
