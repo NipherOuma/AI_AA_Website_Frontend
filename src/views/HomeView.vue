@@ -93,7 +93,7 @@ onMounted(() => {
             </div>
             <div class="col-md-6 d-flex justify-content-center">
               <img
-                src="@/assets/about1.png"
+                src="@/assets/il2.jpg"
                 class="img-fluid rounded"
                 alt="About Us"
               />
