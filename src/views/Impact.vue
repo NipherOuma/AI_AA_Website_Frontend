@@ -248,12 +248,12 @@ const staticImage = "@/assets/impact1.jpg";
   font-family: Arial, sans-serif;
 }
 
-.hero-content{
-  padding-top: 3rem; 
+.hero-content {
+  padding-top: 3rem;
 }
 .hero-section {
   position: relative;
-  padding-top: 3rem; 
+  padding-top: 3rem;
   background: url("@/assets/impact2.jpg") no-repeat center center;
   background-size: cover;
   height: 65vh;

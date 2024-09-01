@@ -8,7 +8,9 @@ const isNavbarCollapsed = ref(true);
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href="/">
-        <span class="logo-text">AI AA<span class="logo-highlight"> NGO</span></span>
+        <span class="logo-text"
+          >AI AA<span class="logo-highlight"> NGO</span></span
+        >
       </a>
       <button
         class="navbar-toggler"
@@ -75,10 +77,10 @@ const isNavbarCollapsed = ref(true);
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 
 .navbar-brand {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .logo-text {
@@ -88,7 +90,7 @@ const isNavbarCollapsed = ref(true);
 }
 
 .logo-highlight {
-  color: rgb(9, 182, 9); 
+  color: rgb(9, 182, 9);
 }
 
 .subnavbar {

@@ -1,24 +1,25 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import axios from 'axios';
-import Navbar from '@/components/Navbar.vue';
-import Footer from '@/components/Footer.vue';
-import { Modal } from 'bootstrap';
+import { ref, onMounted } from "vue";
+import axios from "axios";
+import Navbar from "@/components/Navbar.vue";
+import Footer from "@/components/Footer.vue";
+import { Modal } from "bootstrap";
 
 const images = ref([]);
 const selectedImage = ref(null);
 let bsModal = null;
 
 onMounted(() => {
-  axios.get('http://127.0.0.1:8000/api/gallery/')
-    .then(response => {
+  axios
+    .get("http://127.0.0.1:8000/api/gallery/")
+    .then((response) => {
       images.value = response.data;
     })
-    .catch(error => {
+    .catch((error) => {
       console.log(error);
     });
 
-  const modalElement = document.getElementById('imageModal');
+  const modalElement = document.getElementById("imageModal");
   bsModal = new Modal(modalElement);
 });
 
@@ -43,14 +44,17 @@ function getRandomSpan() {
   <div class="container mt-5 mb-5">
     <h2 class="text-center text-dark mb-4">Our Visual Showcase</h2>
     <div class="mosaic-gallery">
-      <div 
-        class="mosaic-item" 
-        v-for="image in images" 
-        :key="image.id" 
+      <div
+        class="mosaic-item"
+        v-for="image in images"
+        :key="image.id"
         @click="openModal(image)"
-        :style="{ gridColumnEnd: `span ${getRandomSpan()}`, gridRowEnd: `span ${getRandomSpan()}` }"
+        :style="{
+          gridColumnEnd: `span ${getRandomSpan()}`,
+          gridRowEnd: `span ${getRandomSpan()}`,
+        }"
       >
-        <img :src="image.image" :alt="image.title">
+        <img :src="image.image" :alt="image.title" />
         <div class="overlay">
           <div class="overlay-content">
             <h5>{{ image.title }}</h5>
@@ -62,15 +66,30 @@ function getRandomSpan() {
   </div>
 
   <!-- Modal -->
-  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div
+    class="modal fade"
+    id="imageModal"
+    tabindex="-1"
+    aria-labelledby="imageModalLabel"
+    aria-hidden="true"
+  >
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">{{ selectedImage?.title }}</h5>
-          <button type="button" class="btn-close" @click="closeModal" aria-label="Close"></button>
+          <button
+            type="button"
+            class="btn-close"
+            @click="closeModal"
+            aria-label="Close"
+          ></button>
         </div>
         <div class="modal-body">
-          <img :src="selectedImage?.image" class="img-fluid" :alt="selectedImage?.title">
+          <img
+            :src="selectedImage?.image"
+            class="img-fluid"
+            :alt="selectedImage?.title"
+          />
           <p class="mt-3">{{ selectedImage?.description }}</p>
         </div>
       </div>
@@ -85,10 +104,10 @@ function getRandomSpan() {
 <style scoped>
 .mosaic-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
-  grid-auto-rows: 150px; 
-  gap: 10px; 
-  grid-auto-flow: dense; 
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 150px;
+  gap: 10px;
+  grid-auto-flow: dense;
 }
 
 .mosaic-item {
@@ -181,8 +200,8 @@ function getRandomSpan() {
 }
 
 .container {
-  margin-top: 50px; 
-  margin-bottom: 50px; 
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 @media (max-width: 576px) {

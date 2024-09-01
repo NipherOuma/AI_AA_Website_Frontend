@@ -114,7 +114,6 @@ const submitForm = async (event) => {
               Send Message
             </button>
           </form>
-
         </div>
 
         <!-- Map and Events Section -->

@@ -83,16 +83,16 @@ a img {
   height: 40px;
 }
 .subnavbar {
-  width: 40px; 
-  height: 100vh; 
+  width: 40px;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 500; 
+  z-index: 500;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 60px; 
+  padding-top: 60px;
 }
 
 .subnavbar-items {

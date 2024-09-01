@@ -32,7 +32,7 @@ onMounted(() => {
   setInterval(() => {
     currentImageIndex.value = (currentImageIndex.value + 1) % images.length;
   }, 5000);
-  
+
   fetchEvents();
 });
 </script>
@@ -262,15 +262,15 @@ onMounted(() => {
   text-align: center;
 }
 
-.hero-content p{
-  font-size: 40px; 
-  font-weight: bold; 
-  margin-top: 20px;  
+.hero-content p {
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
 .hero-content p.mt-3 {
-  font-size: 1.5rem; 
-  font-weight: normal; 
+  font-size: 1.5rem;
+  font-weight: normal;
 }
 
 .introduction img {
