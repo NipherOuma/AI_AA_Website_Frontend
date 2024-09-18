@@ -1,40 +1,9 @@
 <script setup>
-import { ref, onMounted } from "vue";
-import axios from "axios";
-import Navbar from "@/components/Navbar.vue";
-import Footer from "@/components/Footer.vue";
-import { Modal } from "bootstrap";
+import { useGallery } from '@/composables/useGallery';
+import Navbar from '@/components/Navbar.vue';
+import Footer from '@/components/Footer.vue';
 
-const images = ref([]);
-const selectedImage = ref(null);
-let bsModal = null;
-
-onMounted(() => {
-  axios
-    .get("http://127.0.0.1:8000/api/gallery/")
-    .then((response) => {
-      images.value = response.data;
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-
-  const modalElement = document.getElementById("imageModal");
-  bsModal = new Modal(modalElement);
-});
-
-function openModal(image) {
-  selectedImage.value = image;
-  bsModal.show();
-}
-
-function closeModal() {
-  bsModal.hide();
-}
-
-function getRandomSpan() {
-  return Math.floor(Math.random() * 2) + 1;
-}
+const { images, selectedImage, openModal, closeModal, getRandomSpan } = useGallery();
 </script>
 
 <template>
@@ -102,6 +71,7 @@ function getRandomSpan() {
 </template>
 
 <style scoped>
+/* Your CSS from the previous implementation */
 .mosaic-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

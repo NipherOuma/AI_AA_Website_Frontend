@@ -1,65 +1,19 @@
 <script setup>
-import { ref, computed, onMounted } from "vue";
-import axios from "axios";
-import moment from "moment";
-import Navbar from "@/components/Navbar.vue";
-import Footer from "@/components/Footer.vue";
+import useBlogList from '@/composables/useBlogList';
+import Navbar from '@/components/Navbar.vue';
+import Footer from '@/components/Footer.vue';
 
-const posts = ref([]);
-
-const currentPage = ref(1);
-const postsPerPage = 5;
-
-const processed_posts = computed(() => {
-  return posts.value.map((post) => ({
-    ...post,
-    year: moment(post.publish).format("YYYY"),
-    month: moment(post.publish).format("MM"),
-    day: moment(post.publish).format("DD"),
-    publish: moment(post.publish).format("MMMM D, YYYY [at] h:mm:ss a"),
-  }));
-});
-
-const paginatedPosts = computed(() => {
-  const startIndex = (currentPage.value - 1) * postsPerPage;
-  return processed_posts.value.slice(startIndex, startIndex + postsPerPage);
-});
-
-const totalPages = computed(() => {
-  return Math.ceil(processed_posts.value.length / postsPerPage);
-});
-
-const setCurrentPage = (page) => {
-  currentPage.value = page;
-};
-
-const nextPage = () => {
-  if (currentPage.value < totalPages.value) {
-    currentPage.value++;
-  }
-};
-
-const previousPage = () => {
-  if (currentPage.value > 1) {
-    currentPage.value--;
-  }
-};
-
-const getFirstParagraph = (body) => {
-  const paragraphs = body.split("\n");
-  return paragraphs.length > 0 ? paragraphs[0] : body;
-};
-
-onMounted(() => {
-  axios
-    .get("http://localhost:8000/blog/post/")
-    .then((response) => {
-      posts.value = response.data;
-    })
-    .catch((error) => {
-      console.error("Error fetching posts:", error);
-    });
-});
+const {
+  posts,
+  currentPage,
+  paginatedPosts,
+  totalPages,
+  setCurrentPage,
+  nextPage,
+  previousPage,
+  getFirstParagraph,
+  processedPosts,
+} = useBlogList();
 </script>
 
 <template>
@@ -110,9 +64,7 @@ onMounted(() => {
           <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
               <li class="page-item" :class="{ disabled: currentPage === 1 }">
-                <a class="page-link" href="#" @click.prevent="previousPage"
-                  >Previous</a
-                >
+                <a class="page-link" href="#" @click.prevent="previousPage">Previous</a>
               </li>
               <li
                 class="page-item"
@@ -120,17 +72,9 @@ onMounted(() => {
                 :key="page"
                 :class="{ active: page === currentPage }"
               >
-                <a
-                  class="page-link"
-                  href="#"
-                  @click.prevent="setCurrentPage(page)"
-                  >{{ page }}</a
-                >
+                <a class="page-link" href="#" @click.prevent="setCurrentPage(page)">{{ page }}</a>
               </li>
-              <li
-                class="page-item"
-                :class="{ disabled: currentPage === totalPages }"
-              >
+              <li class="page-item" :class="{ disabled: currentPage === totalPages }">
                 <a class="page-link" href="#" @click.prevent="nextPage">Next</a>
               </li>
             </ul>
@@ -143,28 +87,20 @@ onMounted(() => {
             <div class="card-body">
               <h3 class="card-title">Deepkentom Blogs</h3>
               <p class="card-text">
-                Welcome to our blog! Here you can find various posts on
-                different topics. Feel free to browse and enjoy the content.
+                Welcome to our blog! Here you can find various posts on different topics. Feel free to browse and enjoy the content.
               </p>
             </div>
 
             <!-- Image Between Sections -->
             <div class="text-center my-2 px-3">
-              <!-- Added px-3 to control horizontal padding -->
-              <img
-                src="@/assets/maize.jpg"
-                alt="Divider Image"
-                class="img-fluid rounded"
-                style="border-radius: 8px"
-              />
+              <img src="@/assets/maize.jpg" alt="Divider Image" class="img-fluid rounded" style="border-radius: 8px" />
             </div>
 
             <!-- Other Blogs Section -->
             <div class="card-body">
               <h4 class="card-title">Other Blogs</h4>
               <ul class="list-unstyled">
-                <!-- Render other blogs dynamically -->
-                <li v-for="(post, index) in processed_posts" :key="index">
+                <li v-for="(post, index) in processedPosts" :key="index">
                   <router-link
                     :to="{
                       name: 'PostDetail',

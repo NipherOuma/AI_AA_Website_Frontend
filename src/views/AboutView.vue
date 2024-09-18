@@ -1,22 +1,3 @@
-<script setup>
-import { ref, onMounted } from "vue";
-import Navbar from "@/components/Navbar.vue";
-import Footer from "@/components/Footer.vue";
-import axios from "axios";
-
-const aboutUsImage = "@/assets/about1.png";
-const teamMembers = ref([]);
-
-onMounted(async () => {
-  try {
-    const response = await axios.get("http://localhost:8000/members/");
-    teamMembers.value = response.data;
-  } catch (error) {
-    console.error("Error fetching team members:", error);
-  }
-});
-</script>
-
 <template>
   <header>
     <Navbar />
@@ -152,7 +133,16 @@ onMounted(async () => {
   <Footer />
 </template>
 
+<script setup>
+import { useMembers } from "@/composables/useMembers"; // Import the composable
+import Navbar from "@/components/Navbar.vue";
+import Footer from "@/components/Footer.vue";
+
+const { teamMembers } = useMembers(); // Use the composable to get team members
+</script>
+
 <style scoped>
+/* Add your existing styles here */
 .about-us {
   font-family: Arial, sans-serif;
 }
@@ -171,7 +161,6 @@ onMounted(async () => {
 .our-team {
   background-color: #f8f9fa;
   padding: 3rem 0;
-  height: auto;
 }
 
 .team-card {

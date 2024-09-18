@@ -1,62 +1,11 @@
 <script setup>
-import { ref, onMounted } from "vue";
-import axios from "axios";
-import Navbar from "@/components/Navbar.vue";
-import Footer from "@/components/Footer.vue";
+import { useEvents } from '@/composables/useEvents';
+import { useContact } from '@/composables/useContact';
+import Navbar from '@/components/Navbar.vue';
+import Footer from '@/components/Footer.vue';
 
-const name = ref("");
-const email = ref("");
-const message = ref("");
-const formMessage = ref("");
-const alertType = ref("");
-const recentHighlights = ref([]);
-const upcomingEvents = ref([]);
-
-const fetchEvents = async () => {
-  try {
-    const response = await axios.get("http://127.0.0.1:8000/api/events/");
-    const events = response.data;
-    const currentDate = new Date();
-
-    events.forEach((event) => {
-      const eventDate = new Date(event.date);
-      if (eventDate < currentDate) {
-        recentHighlights.value.push(event);
-      } else {
-        upcomingEvents.value.push(event);
-      }
-    });
-  } catch (error) {
-    console.error("Failed to fetch events", error);
-  }
-};
-
-onMounted(() => {
-  fetchEvents();
-});
-
-const submitForm = async (event) => {
-  event.preventDefault();
-
-  try {
-    await axios.post("http://127.0.0.1:8000/api/contact/", {
-      name: name.value,
-      email: email.value,
-      message: message.value,
-    });
-
-    formMessage.value = "Your message has been sent successfully!";
-    alertType.value = "alert-success";
-
-    name.value = "";
-    email.value = "";
-    message.value = "";
-  } catch (error) {
-    formMessage.value =
-      "There was an error sending your message. Please try again.";
-    alertType.value = "alert-danger";
-  }
-};
+const { recentHighlights, upcomingEvents } = useEvents();
+const { name, email, message, formMessage, alertType, submitForm } = useContact();
 </script>
 
 <template>
@@ -69,9 +18,7 @@ const submitForm = async (event) => {
           <h2 class="h2 text-md-start mb-4">Contact Us</h2>
           <hr class="bg-warning w-25 mx-0 mx-md-0" />
           <p class="lead">
-            Want to learn more about our work or discuss a potential
-            partnership? Reach out to us, and let's build a better future
-            together.
+            Want to learn more about our work or discuss a potential partnership? Reach out to us, and let's build a better future together.
           </p>
           <form @submit="submitForm">
             <div v-if="formMessage" :class="['alert', alertType]" role="alert">
@@ -94,8 +41,8 @@ const submitForm = async (event) => {
                 type="email"
                 class="form-control border-secondary shadow-sm"
                 id="email"
-                v-model="email"
                 placeholder="Your Email"
+                v-model="email"
                 required
               />
             </div>

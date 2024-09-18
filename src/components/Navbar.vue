@@ -4,14 +4,32 @@ const isNavbarCollapsed = ref(true);
 </script>
 
 <template>
-  <!-- Main Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- Secondary Navbar (Scrolls with Content) -->
+  <div class="secondary-navbar bg-light py-1">
+    <div class="container d-flex justify-content-between">
+      <div class="location">
+        <i class="bi bi-geo-alt me-2"></i> Kisii, Kenya
+      </div>
+      <div class="subscribe">
+        <input type="email" class="form-control me-2" placeholder="Subscribe to newsletter" />
+        <button class="btn btn-primary">Subscribe</button>
+      </div>
+    </div>
+  </div>
+  <!-- Main Navbar (Sticky) -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
       <a class="navbar-brand" href="/">
-        <span class="logo-text"
-          >AI AA<span class="logo-highlight"> NGO</span></span
-        >
+        <div class="logo-container">
+          <div class="logo-left">AIA<span>A</span></div>
+          <div class="logo-divider"></div>
+          <div class="logo-right">
+            <div><span>Artificial Intelligence</span></div>
+            <div><span>Alliance Agriculture</span></div>
+          </div>
+        </div>
       </a>
+
       <button
         class="navbar-toggler"
         type="button"
@@ -19,9 +37,7 @@ const isNavbarCollapsed = ref(true);
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div
-        :class="['collapse', 'navbar-collapse', { show: !isNavbarCollapsed }]"
-      >
+      <div :class="['collapse', 'navbar-collapse', { show: !isNavbarCollapsed }]">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <a class="nav-link" href="/">Home</a>
@@ -48,8 +64,7 @@ const isNavbarCollapsed = ref(true);
       </div>
     </div>
   </nav>
-
-  <!-- Sub Navbar -->
+  <!-- Sub Navbar (Fixed on the Left) -->
   <nav class="subnavbar">
     <ul class="navbar-nav subnavbar-items">
       <li class="nav-item">
@@ -77,20 +92,66 @@ const isNavbarCollapsed = ref(true);
 </template>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
-
+/* Main Sticky Navbar */
 .navbar-brand {
   font-family: "Roboto", sans-serif;
 }
 
-.logo-text {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #ffffff;
+.logo-container {
+  display: flex;
+  align-items: center;
 }
 
-.logo-highlight {
+.logo-left {
+  font-weight: bold;
+  font-size: 1.8em;
+  margin-right: 10px;
+}
+
+.logo-divider {
+  width: 2px;
+  height: 60px;
+  background: linear-gradient(to bottom, white 50%, rgb(9, 182, 9) 50%);
+  margin-right: 10px;
+}
+
+.logo-right {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-size: 19px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.logo-right div {
+  font-size: 0.9em;
+}
+
+span {
   color: rgb(9, 182, 9);
+}
+
+/* Secondary Navbar */
+.secondary-navbar {
+  width: 100%;
+  padding: 10px 0;
+}
+
+.location {
+  font-size: 1rem;
+}
+
+.subscribe {
+  display: flex;
+  align-items: center;
+}
+
+.subscribe input {
+  width: 200px;
+}
+
+.subscribe button {
+  margin-left: 10px;
 }
 
 .subnavbar {
@@ -135,9 +196,5 @@ const isNavbarCollapsed = ref(true);
 
 .subnavbar .nav-link i:hover {
   filter: brightness(1.2);
-}
-
-.navbar {
-  padding-left: 30px;
 }
 </style>
