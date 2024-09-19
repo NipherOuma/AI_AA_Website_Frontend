@@ -80,9 +80,8 @@ const {
 
         <div class="col-md-4">
           <div class="card mb-4">
-            <!-- Deepkentom Blogs Section -->
             <div class="card-body">
-              <h3 class="card-title">Deepkentom Blogs</h3>
+              <h3 class="card-title">AIAA Blogs</h3>
               <p class="card-text">
                 Welcome to our blog! Here you can find various posts on different topics. Feel free to browse and enjoy the content.
               </p>
