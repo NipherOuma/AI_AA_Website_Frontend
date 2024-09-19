@@ -102,7 +102,7 @@ const { post, comments, comment, submitComment } = usePost();
           <!-- Image Between Sections -->
           <div class="text-center my-2 px-3">
             <img
-              src="@/assets/maize.jpg"
+              src="@/assets/images/maize.jpg"
               alt="Divider Image"
               class="img-fluid rounded"
               style="border-radius: 8px"

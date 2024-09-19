@@ -5,30 +5,29 @@ const isNavbarCollapsed = ref(true);
 
 <template>
   <div class="secondary-navbar py-1">
-  <div class="container d-flex justify-content-between">
-    <!-- Location with Icon -->
-    <div class="location text-white mt-1">
-      <i class="bi bi-geo-alt me-2"></i> 
-      <span class="text-white">Kisii, Kenya</span> 
-    </div>
-    <div class="subscribe">
-      <a href="/gallery" class="text-white">
-        <button class="btn text-white">
-          <i class="bi bi-images d-inline d-lg-none"></i>
-          <span class="d-none d-lg-inline text-white">Gallery</span>
-        </button>
-      </a>
+    <div class="container d-flex justify-content-between">
+      <!-- Location with Icon -->
+      <div class="location text-white mt-1">
+        <i class="bi bi-geo-alt me-2"></i>
+        <span class="text-white">Kisii, Kenya</span>
+      </div>
+      <div class="subscribe">
+        <a href="/gallery" class="text-white">
+          <button class="btn text-white">
+            <i class="bi bi-images d-inline d-lg-none"></i>
+            <span class="d-none d-lg-inline text-white">Gallery</span>
+          </button>
+        </a>
 
-      <a href="/contact" class="text-white ms-2">
-        <button class="btn text-white">
-          <i class="bi bi-envelope d-inline d-lg-none"></i>
-          <span class="d-none d-lg-inline text-white">Contact Us</span>
-        </button>
-      </a>
+        <a href="/contact" class="text-white ms-2">
+          <button class="btn text-white">
+            <i class="bi bi-envelope d-inline d-lg-none"></i>
+            <span class="d-none d-lg-inline text-white">Contact Us</span>
+          </button>
+        </a>
+      </div>
     </div>
   </div>
-</div>
-
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
@@ -124,5 +123,32 @@ span {
 
 .location {
   font-size: 1rem;
+}
+@media (max-width: 768px) {
+  .logo-left {
+    font-size: 1.2em; 
+  }
+
+  .logo-divider {
+    height: 35px; 
+  }
+
+  .logo-right {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo-left {
+    font-size: 0.9em;
+  }
+
+  .logo-divider {
+    height: 30px;
+  }
+
+  .logo-right {
+    font-size: 12px; 
+  }
 }
 </style>

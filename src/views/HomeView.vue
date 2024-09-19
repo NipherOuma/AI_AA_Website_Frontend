@@ -4,9 +4,9 @@ import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/Footer.vue";
 import { useEvents } from "@/composables/useEvent";
 
-import hero1 from "@/assets/bg.jpg";
-import hero2 from "@/assets/bg1.png";
-import hero3 from "@/assets/bg3.jpg";
+import hero1 from "@/assets/images/bg.jpg";
+import hero2 from "@/assets/images/bg1.png";
+import hero3 from "@/assets/images/bg3.jpg";
 
 const images = [hero1, hero2, hero3, hero3, hero2, hero1];
 const currentImageIndex = ref(0);
@@ -54,7 +54,7 @@ onMounted(() => {
           <div class="row align-items-center">
             <!-- Image Column -->
             <div class="col-md-6 d-flex justify-content-center order-md-1 order-2">
-              <img src="@/assets/hero.jpg" class="img-fluid rounded" alt="About Us" />
+              <img src="@/assets/images/hero.jpg" class="img-fluid rounded" alt="About Us" />
             </div>
             <!-- Content Column -->
             <div class="col-12 col-md-6 text-center text-md-start mb-4 mb-md-0">

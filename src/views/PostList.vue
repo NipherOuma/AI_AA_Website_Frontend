@@ -90,7 +90,7 @@ const {
 
             <!-- Image Between Sections -->
             <div class="text-center my-2 px-3">
-              <img src="@/assets/maize.jpg" alt="Divider Image" class="img-fluid rounded" style="border-radius: 8px" />
+              <img src="@/assets/images/maize.jpg" alt="Divider Image" class="img-fluid rounded" style="border-radius: 8px" />
             </div>
 
             <!-- Other Blogs Section -->

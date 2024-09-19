@@ -29,7 +29,7 @@ import Footer from "@/components/Footer.vue";
           <div class="col-md-4">
             <div class="option-card p-4 mb-4">
               <img
-                src="@/assets/Alogo.png"
+                src="@/assets/images/Alogo.png"
                 class="img-fluid mb-3"
                 alt="Partner with Us"
               />
@@ -46,7 +46,7 @@ import Footer from "@/components/Footer.vue";
           <div class="col-md-4">
             <div class="option-card p-4 mb-4">
               <img
-                src="@/assets/Alogo.png"
+                src="@/assets/images/Alogo.png"
                 class="img-fluid mb-3"
                 alt="Volunteer"
               />
@@ -63,7 +63,7 @@ import Footer from "@/components/Footer.vue";
           <div class="col-md-4">
             <div class="option-card p-4 mb-4">
               <img
-                src="@/assets/Alogo.png"
+                src="@/assets/images/Alogo.png"
                 class="img-fluid mb-3"
                 alt="Donate"
               />
@@ -96,7 +96,7 @@ import Footer from "@/components/Footer.vue";
           </div>
           <div class="col-md-6">
             <img
-              src="@/assets/seminar.png"
+              src="@/assets/images/seminar.png"
               class="img-fluid rounded"
               alt="Workshops and Seminars"
             />
@@ -126,7 +126,7 @@ import Footer from "@/components/Footer.vue";
           </div>
           <div class="col-md-6 order-md-1">
             <img
-              src="@/assets/community.png"
+              src="@/assets/images/community.png"
               class="img-fluid rounded"
               alt="Community Engagement Programs"
             />
@@ -156,7 +156,7 @@ import Footer from "@/components/Footer.vue";
           </div>
           <div class="col-md-6">
             <img
-              src="@/assets/remote.png"
+              src="@/assets/images/remote.png"
               class="img-fluid rounded"
               alt="Remote Sensing in Precision Farming"
             />
@@ -185,7 +185,7 @@ import Footer from "@/components/Footer.vue";
           </div>
           <div class="col-md-6 order-md-1">
             <img
-              src="@/assets/collaborations.jpg"
+              src="@/assets/images/collaborations.jpg"
               class="img-fluid rounded"
               alt="Collaboration Opportunities"
             />
@@ -218,7 +218,7 @@ import Footer from "@/components/Footer.vue";
 }
 
 .hero-section {
-  background: url("@/assets/get.jpg") no-repeat center center;
+  background: url("@/assets/images/get.jpg") no-repeat center center;
   background-size: cover;
   height: 60vh;
   position: relative;

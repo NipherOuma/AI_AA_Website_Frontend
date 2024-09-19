@@ -1,3 +1,11 @@
+<script setup>
+import { useMembers } from "@/composables/useMembers";
+import Navbar from "@/components/Navbar.vue";
+import Footer from "@/components/Footer.vue";
+
+const { teamMembers } = useMembers();
+</script>
+
 <template>
   <div class="about-us">
     <Navbar />
@@ -7,7 +15,7 @@
         <div class="row align-items-center">
           <div class="col-md-6">
             <img
-              src="@/assets/collaborations.jpg"
+              src="@/assets/images/collaborations.jpg"
               alt="About Us Image"
               class="img-fluid about-img"
             />
@@ -70,7 +78,7 @@
           <div class="col-md-4 col-sm-6 col-12 mb-4">
             <div class="card service-card">
               <img
-                src="@/assets/custom.png"
+                src="@/assets/images/custom.png"
                 alt="Custom Software Development"
                 class="card-img-top"
               />
@@ -89,7 +97,7 @@
           <div class="col-md-4 col-sm-6 col-12 mb-4">
             <div class="card service-card">
               <img
-                src="@/assets/ed1.png"
+                src="@/assets/images/ed1.png"
                 alt="Education and Training"
                 class="card-img-top"
               />
@@ -108,7 +116,7 @@
           <div class="col-md-4 col-sm-6 col-12 mb-4">
             <div class="card service-card">
               <img
-                src="@/assets/conservation.png"
+                src="@/assets/images/conservation.png"
                 alt="AI-based Crop Monitoring"
                 class="card-img-top"
               />
@@ -129,14 +137,6 @@
 
   <Footer />
 </template>
-
-<script setup>
-import { useMembers } from "@/composables/useMembers";
-import Navbar from "@/components/Navbar.vue";
-import Footer from "@/components/Footer.vue";
-
-const { teamMembers } = useMembers();
-</script>
 
 <style scoped>
 .about-us {

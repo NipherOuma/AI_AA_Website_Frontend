@@ -2,7 +2,7 @@
 import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/Footer.vue";
 
-const staticImage = "@/assets/impact1.jpg";
+const staticImage = "@/assets/images/impact1.jpg";
 </script>
 
 <template>
@@ -35,7 +35,7 @@ const staticImage = "@/assets/impact1.jpg";
           <div class="col-md-4 mb-4">
             <div class="card">
               <img
-                src="@/assets/sdg2.png"
+                src="@/assets/images/sdg2.png"
                 alt="SDG 2 - Zero Hunger"
                 class="img-fluid"
               />
@@ -56,7 +56,7 @@ const staticImage = "@/assets/impact1.jpg";
           <div class="col-md-4 mb-4">
             <div class="card">
               <img
-                src="@/assets/sdg9.png"
+                src="@/assets/images/sdg9.png"
                 alt="SDG 9 - Industry, Innovation, and Infrastructure"
                 class="img-fluid"
               />
@@ -78,7 +78,7 @@ const staticImage = "@/assets/impact1.jpg";
           <div class="col-md-4 mb-4">
             <div class="card">
               <img
-                src="@/assets/sdg12.png"
+                src="@/assets/images/sdg12.png"
                 alt="SDG 12 - Responsible Consumption and Production"
                 class="img-fluid"
               />
@@ -100,7 +100,7 @@ const staticImage = "@/assets/impact1.jpg";
           <div class="col-md-4 mb-4">
             <div class="card">
               <img
-                src="@/assets/sdg13.png"
+                src="@/assets/images/sdg13.png"
                 alt="SDG 13 - Climate Action"
                 class="img-fluid"
               />
@@ -120,7 +120,7 @@ const staticImage = "@/assets/impact1.jpg";
           <div class="col-md-4 mb-4">
             <div class="card">
               <img
-                src="@/assets/sdg15.png"
+                src="@/assets/images/sdg15.png"
                 alt="SDG 15 - Life on Land"
                 class="img-fluid"
               />
@@ -141,7 +141,7 @@ const staticImage = "@/assets/impact1.jpg";
           <div class="col-md-4 mb-4">
             <div class="card">
               <img
-                src="@/assets/sdg17.png"
+                src="@/assets/images/sdg17.png"
                 alt="SDG 17 - Partnerships for the Goals"
                 class="img-fluid"
               />
@@ -230,7 +230,7 @@ const staticImage = "@/assets/impact1.jpg";
           <!-- Image on the right -->
           <div class="col-sm-12 col-md-6">
             <img
-              src="@/assets/illustration.png"
+              src="@/assets/images/illustration.png"
               alt="AI in Agriculture"
               class="img-fluid"
             />
@@ -254,7 +254,7 @@ const staticImage = "@/assets/impact1.jpg";
 .hero-section {
   position: relative;
   padding-top: 3rem;
-  background: url("@/assets/impact2.jpg") no-repeat center center;
+  background: url("@/assets/images/impact2.jpg") no-repeat center center;
   background-size: cover;
   height: 65vh;
 }
