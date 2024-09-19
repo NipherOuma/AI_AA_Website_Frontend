@@ -131,15 +131,14 @@
 </template>
 
 <script setup>
-import { useMembers } from "@/composables/useMembers"; // Import the composable
+import { useMembers } from "@/composables/useMembers";
 import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/Footer.vue";
 
-const { teamMembers } = useMembers(); // Use the composable to get team members
+const { teamMembers } = useMembers();
 </script>
 
 <style scoped>
-/* Add your existing styles here */
 .about-us {
   font-family: Arial, sans-serif;
 }

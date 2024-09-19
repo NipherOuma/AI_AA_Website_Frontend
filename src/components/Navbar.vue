@@ -5,20 +5,30 @@ const isNavbarCollapsed = ref(true);
 
 <template>
   <div class="secondary-navbar py-1">
-    <div class="container d-flex justify-content-between">
-      <div class="location text-white">
-        <i class="bi bi-geo-alt me-2"></i> Kisii, Kenya
-      </div>
-      <div class="subscribe">
-        <a href="/gallery">
-          <button class="btn text-white">Gallery</button>
-        </a>
-        <a href="/contact">
-          <button class="btn text-white">Contact Us</button>
-        </a>
-      </div>
+  <div class="container d-flex justify-content-between">
+    <!-- Location with Icon -->
+    <div class="location text-white mt-1">
+      <i class="bi bi-geo-alt me-2"></i> 
+      <span class="text-white">Kisii, Kenya</span> 
+    </div>
+    <div class="subscribe">
+      <a href="/gallery" class="text-white">
+        <button class="btn text-white">
+          <i class="bi bi-images d-inline d-lg-none"></i>
+          <span class="d-none d-lg-inline text-white">Gallery</span>
+        </button>
+      </a>
+
+      <a href="/contact" class="text-white ms-2">
+        <button class="btn text-white">
+          <i class="bi bi-envelope d-inline d-lg-none"></i>
+          <span class="d-none d-lg-inline text-white">Contact Us</span>
+        </button>
+      </a>
     </div>
   </div>
+</div>
+
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
@@ -41,7 +51,7 @@ const isNavbarCollapsed = ref(true);
         <span class="navbar-toggler-icon"></span>
       </button>
       <div :class="['collapse', 'navbar-collapse', { show: !isNavbarCollapsed }]">
-        <div class="d-flex justify-content-center flex-grow-1">
+        <div class="d-flex justify-content-lg-center flex-grow-1">
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="/">Home</a>
