@@ -32,14 +32,13 @@ onMounted(() => {
     >
       <div class="hero-overlay"></div>
 
-      <!-- Hero Content -->
-      <section class="hero-content row px-5" style="padding-top: 6rem; padding-bottom: 6rem;">
+      <section class="hero-content row px-3 py-5 px-md-5">
         <div class="col-12 col-lg-9 order-2 order-lg-1 text-lg-start mb-4 mb-lg-0 text-white">
           <h1 class="display-4 fw-bold mb-3 heading">Artificial Intelligence Alliance in Agriculture</h1>
           <p class="lead mb-4">
             Enhancing agricultural productivity and sustainability in Kenya through AI technologies.
           </p>
-          <div class="d-flex col-3 col-lg-3 flex-column flex-sm-row justify-content-center justify-content-lg-start mt-4 gap-2">
+          <div class="d-flex col-6 col-lg-3 flex-column flex-sm-row justify-content-center justify-content-lg-start mt-4 gap-2">
             <a href="#about" class="btn btn-outline-light flex-grow-1" style="border-radius: 20px;">Get Started</a>
           </div>
         </div>
@@ -57,8 +56,8 @@ onMounted(() => {
               <img src="@/assets/images/hero.jpg" class="img-fluid rounded" alt="About Us" />
             </div>
             <!-- Content Column -->
-            <div class="col-12 col-md-6 text-center text-md-start mb-4 mb-md-0">
-              <h2 class="h2">About Us</h2>
+            <div class="col-12 col-md-6 text-md-start mb-4 mb-md-0">
+              <h2 class="h2 text-center">About Us</h2>
               <hr class="bg-warning w-25 mx-auto mx-md-0" />
               <p class="mt-3">
                 AI AA NGO is dedicated to enhancing agricultural productivity and sustainability in Kenya. We utilize artificial intelligence to optimize farming practices, forecast yields, and improve market accessibility for smallholder farmers.
@@ -161,10 +160,6 @@ onMounted(() => {
 .hero-content {
   position: relative;
   z-index: 2; 
-  color: white;
-}
-
-.text-white {
   color: white;
 }
 </style>
