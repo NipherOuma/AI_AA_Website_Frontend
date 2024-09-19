@@ -7,9 +7,7 @@ const { images, selectedImage, openModal, closeModal, getRandomSpan } = useGalle
 </script>
 
 <template>
-  <header>
-    <Navbar />
-  </header>
+<Navbar />
   <div class="container mt-5 mb-5">
     <h2 class="text-center text-dark mb-4">Our Visual Showcase</h2>
     <div class="mosaic-gallery">

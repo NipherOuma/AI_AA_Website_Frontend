@@ -1,75 +1,15 @@
 <script setup>
-import { ref, onMounted } from "vue";
-import axios from "axios";
-import { useRoute } from "vue-router";
-import moment from "moment";
+import { ref } from "vue";
+import usePost from "@/composables/usePost";
 import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/Footer.vue";
 
-const post = ref(null);
-const comments = ref([]);
-const comment = ref({
-  name: "",
-  email: "",
-  content: "",
-  post: null,
-});
-
-const route = useRoute();
-
-onMounted(async () => {
-  const { year, month, day, slug } = route.params;
-
-  try {
-    const response = await axios.get(
-      `http://localhost:8000/blog/post/${year}/${month}/${day}/${slug}/`,
-    );
-    post.value = response.data;
-    // Format the publish date with time details
-    post.value.publish = moment(post.value.publish).format(
-      "MMMM D, YYYY [at] h:mm:ss a",
-    );
-    fetchComments();
-  } catch (error) {
-    console.error("Error fetching post:", error);
-  }
-});
-
-const fetchComments = async () => {
-  try {
-    const response = await axios.get(
-      `http://localhost:8000/blog/post/${post.value.id}/comments/`,
-    );
-    comments.value = response.data;
-  } catch (error) {
-    console.error("Error fetching comments:", error);
-  }
-};
-
-const submitComment = async () => {
-  try {
-    comment.value.post = post.value.id;
-    await axios.post(
-      `http://localhost:8000/blog/post/${post.value.id}/comments/`,
-      comment.value,
-    );
-
-    comment.value.name = "";
-    comment.value.email = "";
-    comment.value.content = "";
-    fetchComments();
-  } catch (error) {
-    console.error("Error submitting comment:", error);
-  }
-};
+const { post, comments, comment, submitComment } = usePost();
 </script>
 
 <template>
   <div>
-    <header>
-      <Navbar />
-    </header>
-
+    <Navbar />
     <div class="mx-4 mt-5">
       <div class="row">
         <!-- Blog Post -->
@@ -161,7 +101,6 @@ const submitComment = async () => {
           </div>
           <!-- Image Between Sections -->
           <div class="text-center my-2 px-3">
-            <!-- Added px-3 to control horizontal padding -->
             <img
               src="@/assets/maize.jpg"
               alt="Divider Image"

@@ -23,6 +23,7 @@ onMounted(() => {
 
 <template>
   <div>
+    <Navbar />
     <div
       class="body"
       :style="{
@@ -33,11 +34,6 @@ onMounted(() => {
         transition: 'background-image 5s ease-in-out',
       }"
     >
-      <!-- Navbar -->
-      <header>
-        <Navbar />
-      </header>
-
       <!-- Hero Section -->
       <section class="hero">
         <div class="hero-overlay"></div>

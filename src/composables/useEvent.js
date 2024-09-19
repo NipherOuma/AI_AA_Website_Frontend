@@ -7,11 +7,10 @@ export const useEvents = () => {
 
   const fetchEvents = async () => {
     try {
-      const response = await axiosInstance.get("events/"); 
+      const response = await axiosInstance.get("api/events/"); 
       const events = response.data;
       const currentDate = new Date();
 
-      // Filter only upcoming events
       upcomingEvents.value = events.filter((event) => {
         const eventDate = new Date(event.date);
         return eventDate >= currentDate;

@@ -1,9 +1,6 @@
 <template>
-  <header>
-    <Navbar />
-  </header>
-
   <div class="about-us">
+    <Navbar />
     <!-- About Us Section -->
     <section class="about-section">
       <div class="container">

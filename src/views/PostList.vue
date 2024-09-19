@@ -18,10 +18,7 @@ const {
 
 <template>
   <div>
-    <header>
-      <Navbar />
-    </header>
-
+    <Navbar />
     <!-- Main Content -->
     <div class="mx-3 mt-3">
       <h2 class="text-center text-dark mb-2">Our Blogs</h2>
