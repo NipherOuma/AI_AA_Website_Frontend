@@ -40,33 +40,34 @@ const { teamMembers } = useMembers();
 
     <!-- Our Team Section -->
     <section class="our-team py-5">
-      <div class="container">
-        <h2 class="text-center mb-4">Our Team</h2>
-        <hr class="bg-warning mx-auto" style="width: 10%" />
-        <div class="row">
-          <div
-            v-for="member in teamMembers"
-            :key="member.name"
-            class="col-md-4 col-sm-6 col-12 mb-4"
-          >
-            <div class="card team-card">
-              <div class="team-img-container">
-                <img
-                  :src="member.image"
-                  alt="Team Member Image"
-                  class="team-img"
-                />
-              </div>
-              <div class="card-body">
-                <h5 class="card-title fw-bold">{{ member.name }}</h5>
-                <p class="card-text lead">{{ member.title }}</p>
-                <p class="card-text">{{ member.about }}</p>
-              </div>
-            </div>
+  <div class="container">
+    <h2 class="text-center mb-4">Our Team</h2>
+    <hr class="bg-warning mx-auto" style="width: 10%" />
+    <div class="row">
+      <div
+        v-for="member in teamMembers"
+        :key="member.name"
+        class="col-md-6 col-lg-6 col-sm-12 mb-5"
+      >
+        <div class="card team-card shadow-lg">
+          <div class="team-img-container">
+            <img
+              :src="member.image"
+              alt="Team Member Image"
+              class="team-img img-fluid"
+            />
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">{{ member.name }}</h5>
+            <p class="card-text lead">{{ member.title }}</p>
+            <p class="card-text">{{ member.about }}</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
 
     <!-- Services Section -->
     <section class="services py-5">
