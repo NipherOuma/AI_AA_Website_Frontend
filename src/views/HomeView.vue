@@ -58,7 +58,7 @@ onMounted(() => {
             <!-- Content Column -->
             <div class="col-12 col-md-6 text-md-start mb-4 mb-md-0">
               <h2 class="h2 text-center">About Us</h2>
-              <hr class="bg-warning w-25 mx-auto mx-md-0" />
+              <hr class="bg-warning w-25 mx-auto" />
               <p class="mt-3">
                 AI AA NGO is dedicated to enhancing agricultural productivity and sustainability in Kenya. We utilize artificial intelligence to optimize farming practices, forecast yields, and improve market accessibility for smallholder farmers.
               </p>
